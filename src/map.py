@@ -35,6 +35,14 @@ class initMap(setup):
             for j in range(self.mapWidth):
                 char = dataInfo.read(1)
                 self.mapData[j][i] = char
+    def loadMap(self):
+        #here we want to load the blocks based on if the map is greatee than 0 or not
+        for i in enumerate(self.mapHeight):
+            for j in enumerate(self.mapWidth):
+                #check if location in map is greather than 0
+                if(self.mapData[j][i] > 0):
+                    pass
+                    #render a block here
 test = initMap()
 test.loadTiles(f"{os.getcwd()}/static/tile.png")
 test.loadMap(f"{os.getcwd()}/data/map1.dat")
